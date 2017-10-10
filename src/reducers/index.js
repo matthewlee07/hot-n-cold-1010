@@ -8,16 +8,23 @@ const initialState = {
     showInfoModal: false
 };
 
-export const gameReducer = (state = initialState, action) => {
-    // guess reducer
-    switch (action.type) {
-        case BIGONE:
-            let guess = parseInt(action.userguess, 10);
-            if (isNaN(guess)||guess>100||guess<0||guess !==action.userguess) {
-                return Object.assign({}, state, {
-                    feedback: 'Please enter a valid number'
-                });
-            }
+export const gameReducer = (state=initialState, action) => {
+  // guess reducer
+  switch (action.type) {
+    case BIGONE:
+      let guess = parseInt(action.userguess, 10);
+      console.log('guess ', guess);
+      console.log('floor ', Math.floor(guess));
+      if (isNaN(guess) || guess > 100 || guess < 0 || action.userguess !== guess) {
+        return Object.assign({}, state, {
+        feedback: 'Please enter a valid integer between 0 and 100'
+        });
+      }
+      if (state.guesses.indexOf(guess)>=0){
+        return Object.assign({}, state, {
+          feedback: 'You already guessed that one'
+          });
+      }
 
             const difference = Math.abs(guess - state.correctAnswer);
 
