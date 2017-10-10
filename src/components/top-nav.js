@@ -4,7 +4,6 @@ import './top-nav.css';
 import {toggle, newgame} from '../actions'
 export class TopNav extends React.Component {
     
-
     onNewGame(event) {
        this.props.dispatch(newgame());
     }

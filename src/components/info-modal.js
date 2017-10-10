@@ -5,11 +5,6 @@ import {toggle} from '../actions'
 export class InfoModal extends React.Component {
     onClose(event) {
         this.props.dispatch(toggle());
-
-        // event.preventDefault();
-        // if (this.props.onClose) {
-        //     this.props.onClose();
-        // }
     }
 
     render() {
