@@ -1,12 +1,12 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import TopNav from './top-nav';
 import InfoModal from './info-modal';
 
 import './header.css';
 
-export class Header extends React.Component  {
-    
+export class Header extends React.Component {
+
     render() {
         let infoModal;
         if (this.props.showInfoModal) {

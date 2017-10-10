@@ -2,7 +2,7 @@ import React from 'react';
 
 import Header from './header';
 import GuessSection from './guess-section';
-import GuessCount  from './guess-count';
+import GuessCount from './guess-count';
 import GuessList from './guess-list';
 
 export default class Game extends React.Component {
@@ -13,7 +13,7 @@ export default class Game extends React.Component {
         <Header />
         <GuessSection />
         <GuessCount />
-        <GuessList />                
+        <GuessList />
       </div>
     );
   }

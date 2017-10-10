@@ -1,11 +1,11 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import './top-nav.css';
-import {toggle, newgame} from '../actions'
+import { toggle, newgame } from '../actions'
 export class TopNav extends React.Component {
-    
+
     onNewGame(event) {
-       this.props.dispatch(newgame());
+        this.props.dispatch(newgame());
     }
 
     onInfo(event) {

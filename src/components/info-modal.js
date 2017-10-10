@@ -1,7 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import './info-modal.css';
-import {toggle} from '../actions'
+import { toggle } from '../actions'
 export class InfoModal extends React.Component {
     onClose(event) {
         this.props.dispatch(toggle());
