@@ -13,9 +13,16 @@ export const gameReducer = (state=initialState, action) => {
   switch (action.type) {
     case BIGONE:
       let guess = parseInt(action.userguess, 10);
-      if (isNaN(guess)) {
-          return Object.assign({}, state, {
-          feedback: 'Please enter a valid number'
+      console.log('guess ', guess);
+      console.log('floor ', Math.floor(guess));
+      if (isNaN(guess) || guess > 100 || guess < 0 || action.userguess !== guess) {
+        return Object.assign({}, state, {
+        feedback: 'Please enter a valid integer between 0 and 100'
+        });
+      }
+      if (state.guesses.indexOf(guess)>=0){
+        return Object.assign({}, state, {
+          feedback: 'You already guessed that one'
           });
       }
 
