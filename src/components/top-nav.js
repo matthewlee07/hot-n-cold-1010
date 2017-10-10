@@ -1,20 +1,26 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
 import './top-nav.css';
+import {toggle, newgame} from '../actions'
+export class TopNav extends React.Component {
+    
 
-export default class TopNav extends React.Component {
     onNewGame(event) {
-        event.preventDefault();
-        if (this.props.onNewGame) {
-            this.props.onNewGame();
-        }
+       this.props.dispatch(newgame());
+       
+        // event.preventDefault();
+        // if (this.props.onNewGame) {
+        //     this.props.onNewGame();
+        // }
     }
 
     onInfo(event) {
-        event.preventDefault();
-        if (this.props.onInfo) {
-            this.props.onInfo();
-        }
+        this.props.dispatch(toggle());
+
+        // event.preventDefault();
+        // if (this.props.onInfo) {
+        //     this.props.onInfo();
+        // }
     }
 
     render() {
@@ -37,3 +43,5 @@ export default class TopNav extends React.Component {
     }
 };
 
+
+export default connect()(TopNav);
