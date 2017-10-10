@@ -7,20 +7,10 @@ export class TopNav extends React.Component {
 
     onNewGame(event) {
        this.props.dispatch(newgame());
-       
-        // event.preventDefault();
-        // if (this.props.onNewGame) {
-        //     this.props.onNewGame();
-        // }
     }
 
     onInfo(event) {
         this.props.dispatch(toggle());
-
-        // event.preventDefault();
-        // if (this.props.onInfo) {
-        //     this.props.onInfo();
-        // }
     }
 
     render() {
@@ -42,6 +32,5 @@ export class TopNav extends React.Component {
         );
     }
 };
-
 
 export default connect()(TopNav);

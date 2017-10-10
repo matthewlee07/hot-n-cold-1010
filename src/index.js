@@ -8,10 +8,6 @@ import './index.css';
 import {toggle, newgame, bigone, guess} from './actions';
 import Game from './components/game';
 
-// store.dispatch(toggle());
-store.dispatch(bigone(10));
-console.log(store.getState());
-
 ReactDOM.render(
   <Provider store={store}>
     <Game />

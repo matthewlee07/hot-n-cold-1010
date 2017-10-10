@@ -1,15 +1,17 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
 import './guess-form.css';
+import {bigone} from '../actions';
 
-export default class GuessForm extends React.Component {
+export class GuessForm extends React.Component {
     onGuess(event) {
         event.preventDefault();
 
-        if (this.props.onGuess) {
-            const value = this.input.value;
-            this.props.onGuess(value);
-        }
+        // if (this.props.onGuess) {
+        //     const value = this.input.value;
+        //     this.props.onGuess(value);
+        // }
+        this.props.dispatch(bigone(Number(this.input.value)));
         this.input.value = '';
     }
 
@@ -27,3 +29,4 @@ export default class GuessForm extends React.Component {
     }
 };
 
+export default connect()(GuessForm);
