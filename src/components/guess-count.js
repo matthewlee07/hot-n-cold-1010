@@ -7,7 +7,7 @@ export function GuessCount(props) {
         <p>
           Guess #<span id="count">{props.count}</span>!
         </p>
-    );
+  );
 }
 
 export const mapStateToProps = state => ({
