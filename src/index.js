@@ -8,7 +8,7 @@ import './index.css';
 import {toggle, newgame, bigone, guess} from './actions';
 import Game from './components/game';
 
-store.dispatch(bigone(5));
+// store.dispatch(toggle());
 store.dispatch(bigone(10));
 console.log(store.getState());
 
